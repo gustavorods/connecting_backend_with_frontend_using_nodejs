@@ -8,11 +8,11 @@
 <body>
     <h1>Own Data</h1>
     <input type="text" id="input">
-    <button id="button">GET DATA</button>    
+    <button id="button">GET DATA</button>
 
     <h1>Send Data</h1>
     <input type="text" id="input2">
-    <button id="button2">SEND DATA</button>    
+    <button id="button2">SEND DATA</button>
 
 <script>
     const input = document.getElementById("input");
@@ -20,7 +20,7 @@
     const responseAPI = async (e) => {
         e.preventDefault();
 
-        const res = await fetch('http://localhost:3000/message', {
+        const res = await fetch('/message', {
             method: 'GET'
         })
 
@@ -38,7 +38,7 @@
     const sendData = async () => {
     const data = { message: input2.value };
 
-    const res = await fetch('http://localhost:3000/message', {
+    const res = await fetch('/message', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -50,7 +50,7 @@
     console.log(response);
 };
     button2.addEventListener("click", sendData)
-</script>    
+</script>
 
 </body>
 </html>
