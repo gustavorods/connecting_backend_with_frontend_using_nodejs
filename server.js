@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use a porta do ambiente ou 3000 como fallback
 
 app.use(express.json());
 
@@ -8,8 +8,8 @@ app.use(express.static('public'));
 
 // Get data
 app.get('/message', (req, res) => {
-    res.json({message: 'Hello word!'})
-})
+    res.json({message: 'Hello world!'})
+});
 
 // Send data
 app.post('/message', (req, res) => {
@@ -19,6 +19,5 @@ app.post('/message', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('listening on port');
-})
-
+    console.log(`Listening on port ${port}`);
+});
