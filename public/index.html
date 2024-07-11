@@ -20,7 +20,7 @@
     const responseAPI = async (e) => {
         e.preventDefault();
 
-        const res = await fetch('http://localhost:4000/message', {
+        const res = await fetch('http://localhost:3000/message', {
             method: 'GET'
         })
 
@@ -38,7 +38,7 @@
     const sendData = async () => {
     const data = { message: input2.value };
 
-    const res = await fetch('http://localhost:4000/message', {
+    const res = await fetch('http://localhost:3000/message', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
